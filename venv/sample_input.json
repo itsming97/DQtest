@@ -1,0 +1,33 @@
+{
+  "Owner": "Anurag",
+  "Database": "GATHI_DB",
+  "Schema": "GATHI_DATA",
+  "Table": "election",
+  "ObjId": "35f0c4bc5a44d24f24d2c9edd1cf1503",
+  "ObjName": "election",
+  "PrimaryKey": [
+    "REC_NBR"
+  ],
+  "Rules": [
+    {
+      "Dimension": "COMPLETENESS",
+      "RuleName": "NULL_CHECK",
+      "RuleDef": "$CDE is NULL",
+      "ObjPrprtId": "4c3c2c026e6f97a73b893435f73e55e8",
+      "CDEName": "total_votes",
+      "DATATYPE": "INTEGER",
+      "Arguments": {"CDE":"total_votes"}
+    },
+    {
+      "Dimension": "ACCURACY",
+      "RuleId": "a68bf30c78dfd2735503164e62f36d60",
+      "RuleName": "VALID_VALUES_LIST",
+      "RuleDef": "$CDE in $val",
+      "ObjPrprtId": "0675c53e35e323abdcc898272011dab9",
+      "CDEName": "state",
+      "DATATYPE": "VARCHAR",
+      "Arguments": {"CDE":"state","val":"('Texas','Virginia')"}
+	}
+  ]
+}
+
